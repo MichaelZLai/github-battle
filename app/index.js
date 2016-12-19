@@ -1,5 +1,5 @@
 var USER_DATA = {
-  name: "bunker Lai",
+  name: "Michael Lai",
   username: "michaelzlai",
   image: "https://scontent.xx.fbcdn.net/v/t1.0-9/15181240_10154239531058790_7224650531886659620_n.jpg?oh=74b0673e2204b248f5646131230e447d&oe=58F90CDF"
 }
@@ -7,7 +7,19 @@ var USER_DATA = {
 var React = require("react");
 var ReactDOM = require("react-dom");
 
-//function(data) = view
+var Link = React.createClass({
+  changeURL: function(){
+    window.location.replace(this.props.href)
+  },
+  render: function(){
+    return (
+      <span style={{color:"blue", cursor:"pointer"}}
+      onClick={this.changeURL}>
+      {this.props.children}
+      </span>
+    )
+  }
+})
 
 var ProfilePic = React.createClass({
   render: function(){
@@ -19,9 +31,9 @@ var ProfileLink = React.createClass({
   render: function(){
     return(
       <div>
-        <a href={"https://www.github.com/" + this.props.username} target="_blank">
+        <Link href={"https://www.github.com/" + this.props.username} target="_blank">
         {this.props.username}
-        </a>
+        </Link>
       </div>
     )
   }
