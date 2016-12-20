@@ -6,25 +6,20 @@ var ConfirmBattleContainer = React.createClass({
     router: React.PropTypes.object.isRequired
   },
   getInitialState: function(){
-    console.log("get initial state")
     return{
       isLoading: true,
       playerInfo: []
     }
   },
   componentWillMount: function(){
-    console.log("component will mount")
   },
   componentDidMount: function(){
-    console.log("component did mount")
     var query = this.props.location.query;
     //fetch info from github then update state
   },
   componentWillReceiveProps: function(){
-    console.log("component will receive props")
   },
   componentWillUnmount: function(){
-    console.log("component will un-mount")
   },
   render: function(){
     return(
