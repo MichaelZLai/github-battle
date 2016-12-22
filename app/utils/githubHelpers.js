@@ -5,7 +5,10 @@ var sec = "YOUR_SECRET_ID";
 var param = "?client_id=" + id + "&client_secret=" + sec;
 
 function getUserInfo (username){
-  return axios.get("https://api.github.com/users/" + username + param)
+  //if username or params are used//
+  // return axios.get("https://api.github.com/users/" + username + param)
+  return axios.get("https://api.github.com/users/" + username )
+
 }
 
 var helpers = {
@@ -16,6 +19,8 @@ var helpers = {
       return info.map( user =>{
         return user.data;
       })
+    }).catch( err =>{
+      console.warn("error in getPlayersInfo", err)
     })
   }
 };

@@ -17,8 +17,11 @@ var ConfirmBattleContainer = React.createClass({
     //fetch info from github then update state
     githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
       .then( function (players){
-        console.log("players", players)
-      })
+        this.setState({
+          isLoading: false,
+          playersInfo: [players[0], players[1]]
+        })
+      }.bind(this))
   },
   render: function(){
     return(
