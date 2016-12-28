@@ -20,7 +20,7 @@ function StartOver (){
 function Results (props) {
   if(props.isLoading === true){
     return(
-      <Loading />
+      <Loading text="Please Wait" speed={800}/>
     )
   }
 
