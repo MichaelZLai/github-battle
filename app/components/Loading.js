@@ -2,7 +2,6 @@ var React = require("react");
 var styles = require('../styles');
 var PropTypes = React.PropTypes;
 
-
 var Loading = React.createClass({
   propTypes: {
     text: PropTypes.string,
